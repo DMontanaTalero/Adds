@@ -1,0 +1,39 @@
+<%- include('../partials/head'); %>
+
+<!-- Incluye el Navbar -->
+<%- include('../partials/header') %>
+
+<!-- CONTENIDO -->
+
+<div class="container mt-4">
+  <h1 class="text-center">All Ads</h1>
+  <div class="row">
+    <% if (ads.length > 0) { %> <% ads.forEach(ad => { %>
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <div
+            class="card-title d-flex justify-content-between align-items-center"
+          >
+            <h5><%= ad.title %>
+                <a href="/ads/edit/<%= ad._id %>"><i class="fa-solid fa-pencil"></i></h5></a>
+          </div>
+          <div class="card-body">
+            <p><%= ad.description %></p>
+          </div>
+          <div class="card-footer text-center">
+            <form action="/ads/delete/<%= ad._id %>?_method=DELETE" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }); %> <% } else { %>
+    <p class="text-center">No ads available.</p>
+    <% } %>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
