@@ -11,6 +11,7 @@ adsCtrl.createNewAd = async (req, res) => {
   const newAd = new Ad({ title, description });
   console.log(newAd);
   await newAd.save();
+  req.flash("success_msg", "Ad added successfully");
   res.redirect("/ads");
 };
 
@@ -26,12 +27,14 @@ adsCtrl.renderEditForm = async (req, res) => {
 
 adsCtrl.updateAd = async (req, res) => {
   const { title, description } = req.body;
-  await Ad.findByIdAndUpdate(req.params.id, { title, description });
+  await Ad.findByIdAndUpdate(req.params.id, { title, description }); 
+  req.flash("success_msg", "Ad updated successfully");
   res.redirect("/ads");
 };
 
 adsCtrl.deleteAd = async (req, res) => {
   await Ad.findByIdAndDelete(req.params.id);
+  req.flash("success_msg", "Ad deleted successfully");
   res.redirect("/ads");
 };
 

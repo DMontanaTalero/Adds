@@ -1,7 +1,7 @@
 const indexCtrl = {};
 
 indexCtrl.renderIndex = (req, res) => {
-  res.render("layouts/main");
+  res.redirect("/ads");
 };
 
 indexCtrl.renderLogin = (req, res) => {

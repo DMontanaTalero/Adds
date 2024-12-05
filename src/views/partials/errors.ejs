@@ -1,0 +1,17 @@
+<%if(errors != null){%>
+    <% console.log(errors) %> 
+    
+    <% errors.forEach(e => { %>
+    <div class="alert alert-danger alert-dismissible fade show">
+      <%= e.text %>
+      <button
+        type="button"
+        class="close"
+        data-bs-dismiss="alert"
+        aria-label="close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <% }) %> 
+<%}%>

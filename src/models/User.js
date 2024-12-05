@@ -4,13 +4,13 @@ const bcrypt = require("bcryptjs");
 const UserSchema = new Schema(
   {
     name: { type: String, required: false }, // Solo para proveedores
-    alias: { type: String, required: true },
+    //alias: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    balance: { type: Number, default: 0 }, // Solo para proveedores
-    isProvider: { type: Boolean, required: true }, // True: proveedor, False: cliente
-    servicesCompleted: { type: Number, default: 0 }, // Solo para clientes
-    favoriteAds: [{ type: Schema.Types.ObjectId, ref: "Ad" }], // Solo para clientes
+    //balance: { type: Number, default: 0 }, // Solo para proveedores
+    //isProvider: { type: Boolean, required: true }, // True: proveedor, False: cliente
+    //servicesCompleted: { type: Number, default: 0 }, // Solo para clientes
+    //favoriteAds: [{ type: Schema.Types.ObjectId, ref: "Ad" }], // Solo para clientes
   },
   {
     timestamps: true,
