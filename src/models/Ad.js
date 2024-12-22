@@ -9,6 +9,7 @@ const AdSchema = new Schema(
     },*/
     title: { type: String, required: true },
     description: { type: String, required: true },
+    user: { type: String, required: true },
     /*photos: [String], // URLs o paths de imágenes
     whatsapp: { type: String, required: true },
     city: { type: String, required: true },
@@ -21,6 +22,7 @@ const AdSchema = new Schema(
     ratings: [{ type: Schema.Types.ObjectId, ref: "Rating" }], // Referencia a calificaciones
     servicesProvided: { type: Number, default: 0 },*/
   },
+
   {
     timestamps: true,
   }

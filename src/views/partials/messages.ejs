@@ -1,5 +1,5 @@
 <%if (success_msg && String(success_msg).trim() !== "") { %>
-
+  <% console.log('Mensaje de éxito:', success_msg); %>
 <div class="alert alert-success alert-dismissible fade show">
   <%= success_msg %>
   <button
@@ -12,3 +12,19 @@
   </button>
 </div>
 <% } %>
+
+<%if (error_msg && String(error_msg).trim() !== "") { %>
+
+  <div class="alert alert-danger alert-dismissible fade show">
+    <%= error_msg %>
+    <button
+      type="button"
+      class="close"
+      data-bs-dismiss="alert"
+      aria-label="close"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <% } %>
+  
